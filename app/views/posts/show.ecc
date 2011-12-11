@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>wraaaaaaaaaaaaaaaaa</h1>
+    <h2>wreeeee</h2>
+
+    <p><%= params.get<std::string>("id") %></p>
+  </body>
+</html>
