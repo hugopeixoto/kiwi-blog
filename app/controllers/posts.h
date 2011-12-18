@@ -16,7 +16,6 @@ namespace app {
       void index (const kiwi::http::Request& a_http_request);
 
       void show (const kiwi::http::Request& a_http_request);
-        
     };
   }
 }

@@ -4,11 +4,14 @@
 #include "http/request.h"
 #include "helpers/core.h"
 
+// models
+#include "app/models/post.h"
+using app::controllers::PostsController;
+using app::models::Post;
+
 // views
 #include "app/views/posts/index.cc"
 #include "app/views/posts/show.cc"
-
-using app::controllers::PostsController;
 
 PostsController::PostsController () : super("posts")
 {
@@ -23,6 +26,7 @@ void PostsController::index (const kiwi::http::Request& a_http_request)
 
 void PostsController::show (const kiwi::http::Request& a_http_request)
 {
-  params.set("name", a_http_request.params["name"]);
+  Post* post = Post::find(params.get<std::string>("id"));
+  params.set("post", post);
 }
 

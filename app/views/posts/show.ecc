@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <h1>wraaaaaaaaaaaaaaaaa</h1>
-    <h2>wreeeee</h2>
-
-    <p><%= params.get<std::string>("id") %></p>
+    <% Post* post = params.get<Post*>("post"); %>
+    <% if (post == NULL) { %>
+      <h1>404 Page not found</h1>
+    <% } else { %>
+      <h1><%= post->name() %></h1>
+    <% } %>
   </body>
 </html>
