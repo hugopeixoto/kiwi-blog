@@ -19,12 +19,12 @@ PostsController::PostsController () : super("posts")
   add_action("show", &PostsController::show, &view_posts_show);
 }
 
-void PostsController::index (const kiwi::http::Request& a_http_request)
+void PostsController::index ()
 {
   params.set("posts", Post::all());
 }
 
-void PostsController::show (const kiwi::http::Request& a_http_request)
+void PostsController::show ()
 {
   Post* post = Post::find(params["id"]);
   params.set("post", post);

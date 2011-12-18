@@ -5,7 +5,11 @@
     <% if (post == NULL) { %>
       <h1>404 Page not found</h1>
     <% } else { %>
-      <h1><%= post->name() %></h1>
+      <h1><%= post->get("name") %></h1>
+
+      <p><%= post->get("body") %></p>
     <% } %>
+
+    <p><%= kiwi::helpers::link_to("back", "/") %></p>
   </body>
 </html>

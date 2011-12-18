@@ -9,7 +9,7 @@
 
     <ul>
     <% for (Post* post : posts) { %>
-      <li><%= kiwi::helpers::link_to(post->name(), post) %></li>
+      <li><%= kiwi::helpers::link_to(post->get("name"), post) %></li>
     <% } %>
     </ul>
   </body>

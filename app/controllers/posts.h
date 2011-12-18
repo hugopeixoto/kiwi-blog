@@ -13,9 +13,9 @@ namespace app {
       PostsController ();
 
       protected:
-      void index (const kiwi::http::Request& a_http_request);
+      void index ();
 
-      void show (const kiwi::http::Request& a_http_request);
+      void show ();
     };
   }
 }
