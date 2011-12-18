@@ -8,10 +8,12 @@ namespace app {
   namespace models {
     class Post : public kiwi::model::Base<Post> {
       public:
-      Post (const std::string& a_name) { name_ = a_name; }
+      Post (const uint64_t& a_id, const std::string& a_name) { id_ = a_id; name_ = a_name; }
       const std::string& name () const { return name_; }
+      const uint64_t& id () const { return id_; }
 
       protected:
+      uint64_t id_;
       std::string name_;
     };
   }
