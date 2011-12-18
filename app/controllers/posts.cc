@@ -21,12 +21,12 @@ PostsController::PostsController () : super("posts")
 
 void PostsController::index (const kiwi::http::Request& a_http_request)
 {
-  params.set("name", a_http_request.params["name"]);
+  params.set("posts", Post::all());
 }
 
 void PostsController::show (const kiwi::http::Request& a_http_request)
 {
-  Post* post = Post::find(params.get<std::string>("id"));
+  Post* post = Post::find(params["id"]);
   params.set("post", post);
 }
 

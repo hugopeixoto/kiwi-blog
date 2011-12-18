@@ -1,14 +1,14 @@
 CXXFLAGS=-std=c++0x -g -I ../kiwi -I .
 
 CONTROLLERS=posts
+MODELS=post
 
-VIEWS=app/views/posts/index.cc
-SRCS=main.cc config/routes.cc $(patsubst %, app/controllers/%.cc, $(CONTROLLERS))
+SRCS=main.cc config/routes.cc $(patsubst %, app/controllers/%.cc, $(CONTROLLERS)) $(patsubst %, app/models/%.cc, $(MODELS))
 OBJS=$(patsubst %.cc, %.o, $(SRCS))
 
 all: blog
 
-blog: $(OBJS) $(VIEWS) ../kiwi/bin/libkiwi.a
+blog: $(OBJS) ../kiwi/bin/libkiwi.a
 	g++ -o blog $(OBJS) -L../kiwi/bin -lkiwi -lboost_regex
 
 %.d: $(SRCS)

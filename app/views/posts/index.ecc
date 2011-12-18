@@ -4,7 +4,13 @@
     <meta charset='utf-8'>
   </head>
   <body>
+    <% auto posts = params.get<Post::Set>("posts"); %>
     <h1>It works!</h1>
-    <p>Well, at least it kind of works. Hello, <%= h(params.get<std::string>("name")) %></p>
+
+    <ul>
+    <% for (Post* post : posts) { %>
+      <li><%= kiwi::helpers::link_to(post->name(), post) %></li>
+    <% } %>
+    </ul>
   </body>
 </html>
