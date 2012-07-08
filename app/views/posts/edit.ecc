@@ -10,6 +10,7 @@
     <%= form_for(post, [&](FormBuilder& f) { %>
       <p><%= f.input("name") %></p>
       <p><%= f.textarea("body") %></p>
+      <p><%= f.submit("Save") %></p>
     <% }); %>
 
   </body>

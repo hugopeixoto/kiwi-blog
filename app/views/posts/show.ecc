@@ -11,5 +11,6 @@
     <% } %>
 
     <p><%= kiwi::helpers::link_to("back", "/") %></p>
+    <p><%= kiwi::helpers::link_to("edit", kiwi::helpers::path(post) + "/edit") %></p>
   </body>
 </html>
