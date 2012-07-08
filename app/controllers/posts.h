@@ -2,20 +2,22 @@
 #define APP_CONTROLLERS_POSTS_H_
 
 #include <controller/base.h>
+#include <config/controller.h>
 
 namespace app {
   namespace controllers {
-    class PostsController : public kiwi::controller::Base {
+    class PostsController : public config::ApplicationController {
       protected:
-      typedef kiwi::controller::Base super;
+      typedef config::ApplicationController super;
 
       public:
       PostsController ();
 
       protected:
       void index ();
-
       void show ();
+      void edit ();
+      void update ();
     };
   }
 }

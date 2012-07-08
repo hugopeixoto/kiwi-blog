@@ -17,4 +17,4 @@ blog: $(OBJS) ../kiwi/bin/libkiwi.a
 include $(SRCS:.cc=.d)
 
 %.cc: %.ecc
-	../kiwi/bin/ecc `echo "$@" | sed -e 's/app\/views\/\(.*\)\/\(.*\)\.cc/\1 \2/'` < $< > $@
+	../kiwi/bin/ecc `echo "$@" | sed -e 's/app\/views\/\(.*\)\/\(.*\)\.cc/config::ApplicationController::view_\1_\2/'` "#include <config/controller.h>" < $< > $@
