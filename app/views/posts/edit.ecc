@@ -4,11 +4,11 @@
     <meta charset='utf-8'>
   </head>
   <body>
-    <% auto post = params.get<Post*>("post"); %>
-    <h1>Editing post <%= post->get("name") %></h1>
+    <% auto post = view.get<Post*>("post"); %>
+    <h1>Editing post <%= post->get("title") %></h1>
 
     <%= form_for(post, [&](FormBuilder& f) { %>
-      <p><%= f.input("name") %></p>
+      <p><%= f.input("title") %></p>
       <p><%= f.textarea("body") %></p>
       <p><%= f.submit("Save") %></p>
     <% }); %>

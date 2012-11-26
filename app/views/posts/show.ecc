@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <% Post* post = params.get<Post*>("post"); %>
+    <% Post* post = view.get<Post*>("post"); %>
     <% if (post == NULL) { %>
       <h1>404 Page not found</h1>
     <% } else { %>
-      <h1><%= post->get("name") %></h1>
+      <h1><%= post->get("title") %></h1>
 
       <p><%= post->get("body") %></p>
     <% } %>

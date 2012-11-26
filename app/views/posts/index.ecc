@@ -4,12 +4,12 @@
     <meta charset='utf-8'>
   </head>
   <body>
-    <% auto posts = params.get<Post::Set>("posts"); %>
+    <% auto posts = view.get<Post::Set>("posts"); %>
     <h1>It works!</h1>
 
     <ul>
     <% for (Post* post : posts) { %>
-      <li><%= kiwi::helpers::link_to(post->get("name"), post) %></li>
+      <li><%= kiwi::helpers::link_to(post->get("title"), post) %></li>
     <% } %>
     </ul>
   </body>
